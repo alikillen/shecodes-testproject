@@ -6,7 +6,7 @@ const ProjectPage = () => {
   const { id } = useParams();
 
   useEffect(() => {
-	fetch(`${process.env.REACT_APP_API_URL}dares/${id}`)
+	fetch(`${process.env.REACT_APP_API_URL}projects/${id}`)
   	.then((results) => {
     	return results.json();
   	})

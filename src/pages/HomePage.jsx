@@ -7,7 +7,7 @@ const HomePage = () => {
   const [projectList, setProjectList] = useState([]);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}dares`)
+    fetch(`${process.env.REACT_APP_API_URL}projects`)
       .then((results) => {
         return results.json();
       })
@@ -35,7 +35,7 @@ const HomePage = () => {
       charity_url: 'https://my.tanda.co'
     }
 
-    await fetch(`${process.env.REACT_APP_API_URL}dares/`, {
+    await fetch(`${process.env.REACT_APP_API_URL}projects/`, {
       method: "post",
       headers: {
         "Authorization": `Token ${window.localStorage.getItem('token')}`,
