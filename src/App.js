@@ -10,29 +10,37 @@ import NavigationComponent from './components/nav/nav.jsx' // This is our custom
 import Home from './pages/HomePage.jsx'
 import Projects from './pages/ProjectPage.jsx'
 import Login from './pages/LoginPage.jsx'
+import CreateProjectPage from './pages/CreateProjectPage'
+import Register from "./pages/RegisterPage.jsx"
 
 const App = () => {
   return (
-    <div> 
+    <div>
       <Router>
         {/*  We define our links inside here. This is how we change pages. */}
         <NavigationComponent />
 
         {/* When our route changes in the URL, we then render the correct page */}
         <Switch>
-          <Route exact path="/">
-            <Home />
+          <Route exact path='/createprojectpage'>
+            <CreateProjectPage />
           </Route>
-          <Route exact path="/login">
+          <Route exact path='/login'>
             <Login />
           </Route>
-          <Route path="/project/:id">
+           <Route exact path='/register'>
+            <Register />
+          </Route>
+          <Route path='/project/:id'>
             <Projects />
+          </Route>
+          <Route exact path='/'>
+            <Home />
           </Route>
         </Switch>
       </Router>
     </div>
-  )
+  );
 }
 
 export default App

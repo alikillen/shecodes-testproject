@@ -9,13 +9,19 @@ const Nav = () => {
       <Link to="/"> Home </Link>
       { 
         token
-          ? <button onClick={() => window.localStorage.clear()}>
-            Log Out
-          </button>
+          ?
+          <>
+            <button onClick={() => window.localStorage.clear()}>
+              Log Out
+            </button>
+          
+            <Link to="/createprojectpage">Create New Project</Link>
+            </>
           : (
             <div>
               <Link to="/register"> Register </Link>
               <Link to="/login"> Login </Link>
+            
             </div>
           )
       }
